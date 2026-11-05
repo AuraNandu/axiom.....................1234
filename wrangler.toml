@@ -1,0 +1,22 @@
+name = "axiomchat"
+main = "worker/index.ts"
+compatibility_date = "2026-11-05"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "axiom-db"
+database_id = "cf3c0a64-e0b3-4f78-9687-0bd4a7735784"
+migrations_dir = "migrations"
+
+[[durable_objects.bindings]]
+name = "CHAT_ROOMS"
+class_name = "ChatRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ChatRoom"]
