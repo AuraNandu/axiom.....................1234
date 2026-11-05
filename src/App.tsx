@@ -1,8 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {Radio,Plus,LogOut,Send,Hash,Users,UserPlus,MessageCircle,Phone,Video,Shield,Search,Check,X,Settings,PhoneOff,Mic,MicOff,VideoOff,Menu,RefreshCw} from 'lucide-react';
 type User={id:string;username:string};type Group={id:string;name:string;description:string};type Msg={id:string;username:string;body:string;created_at:string};type Thread={id:string;user_id:string;username:string};
-async function api(path:string,opts:RequestInit={}):Promise<any>{const res=await fetch(path,{...opts,credentials:'include',headers:{'Content-Type':'application/json',...(opts.headers||{})}});const data=await res.json().catch(()=>({}));if(!res.ok)throw Error(data.error||'Request failed');return data;}
-const date=(s:string)=>new Date(s).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+async function api(path:string,opts:RequestInit={}):Promise<any>{const res=await fetch(path,{...opts,credentials:'include',headers:{'Content-Type':'application/json',...(opts.headers||{})}});const data:any=await res.json().catch(()=>({}));if(!res.ok)throw Error(data.error||'Request failed');return data;}
 export default function App(){
  const [me,setMe]=useState<User|null>(null),[mode,setMode]=useState<'login'|'register'>('login'),[username,setUsername]=useState(''),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
  const [groups,setGroups]=useState<Group[]>([]),[activeGroup,setActiveGroup]=useState<Group|null>(null),[messages,setMessages]=useState<Msg[]>([]),[draft,setDraft]=useState(''),[newGroup,setNewGroup]=useState(''),[showGroup,setShowGroup]=useState(false);
