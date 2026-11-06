@@ -1,7 +1,4 @@
-iom Style Fixed
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
 :root{font-family:'DM Sans',system-ui,sans-serif;color:#f5f4ff;background:#080a14;font-synthesis:none;text-rendering:optimizeLegibility;font-smooth:always;--bg:#080a14;--panel:#101426;--panel2:#151b31;--line:#252d49;--muted:#8994b8;--purple:#8b65ff;--purple2:#6848e8;--glow:0 18px 55px rgba(83,55,180,.22)}
 *{box-sizing:border-box}
 html,body,#root{margin:0;min-height:100%;width:100%;background:var(--bg)}
